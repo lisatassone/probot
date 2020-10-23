@@ -1,4 +1,4 @@
-# my-first-app
+# Bots are fun!
 
 > A GitHub App built with [Probot](https://github.com/probot/probot) that Hello world app buil twith probot
 
