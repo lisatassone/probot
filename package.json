@@ -1,8 +1,8 @@
 {
-  "name": "my-first-app",
+  "name": "semantic-bot",
   "version": "1.0.0",
   "private": true,
-  "description": "Hello world app buil twith probot",
+  "description": "Hello world app built with probot",
   "author": "Lisa Tassone",
   "license": "ISC",
   "repository": "https://github.com/lisatassone/hello-world-probot.git",
@@ -15,7 +15,10 @@
   ],
   "scripts": {
     "build": "tsc",
-    "start": "yarn build && probot run ./lib/index.js",
+    "build:watch": "tsc && (tsc -w --preserveWatchOutput & nodemon)",
+    "dev": "npm run build:watch",
+    "start": "probot run ./lib/index.js",
+    "simulate:event": "probot receive -e -p ./lib/index.js",
     "test": "jest"
   },
   "dependencies": {
@@ -29,6 +32,7 @@
     "eslint-plugin-typescript": "^0.14.0",
     "jest": "^26.4.0",
     "nock": "^13.0.4",
+    "nodemon": "^2.0.6",
     "smee-client": "^1.1.0",
     "ts-jest": "^26.2.0",
     "typescript": "^3.9.7"
